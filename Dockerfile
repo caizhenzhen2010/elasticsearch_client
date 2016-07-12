@@ -25,7 +25,7 @@ RUN rm -rf elasticsearch-2.3.4.tar.gz
 WORKDIR /opt/elasticsearch-2.3.4/config
 
 #删除elasticsearch.yml
-RUN mv -rf elasticsearch.yml
+RUN rm -rf elasticsearch.yml
 
 #下载client的配置文件
 RUN wget https://github.com/caizhenzhen2010/elasticsearch_client/blob/master/elasticsearch.yml
