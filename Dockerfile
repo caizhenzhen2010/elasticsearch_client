@@ -37,4 +37,4 @@ EXPOSE 9200 9300
 VOLUME ["/var/logs/elasticsearch/data","/var/logs/elasticsearch/log"]
 
 #启动container之前执行的命令；是启动elasticsearch
-ENTRYPOINT ["/var/logs/elasticsearch/log/elasticsearch"]
+ENTRYPOINT ["/opt/elasticsearch-2.3.4/bin/elasticsearch"]
