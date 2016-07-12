@@ -4,7 +4,7 @@ FROM sean2016/java-8u91
 MAINTAINER sean "caizhenzhen2010@sina.com"
 
 #更新软件版本
-RUN apt-get update
+RUN yum update
 
 #安装wget
 RUN yum install wget
