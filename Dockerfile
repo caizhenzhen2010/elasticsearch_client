@@ -4,10 +4,10 @@ FROM sean2016/java-8u91
 MAINTAINER sean "caizhenzhen2010@sina.com"
 
 #更新软件版本
-RUN yum update
-
+RUN yum update -y
+ 
 #安装wget
-RUN yum install wget
+RUN yum install -y wget
 
 #变更目录
 WORKDIR /opt
@@ -17,6 +17,9 @@ RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/dis
 
 #解压
 RUN tar zxvf elasticsearch-2.3.4.tar.gz
+
+#删除elasticsearch-2.3.4.tar.gz
+RUN rm -rf elasticsearch-2.3.4.tar.gz
 
 #进入es目录
 WORKDIR /opt/elasticsearch-2.3.4/config
