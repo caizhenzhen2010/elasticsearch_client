@@ -4,25 +4,18 @@ FROM sean2016/java-8u91
 MAINTAINER sean "caizhenzhen2010@sina.com"
 
 #更新软件版本
-RUN yum update -y
- 
 #安装wget
-RUN yum install -y wget
-
-
-
 #下载 elasticsearch并解压
-RUN curl https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.4/elasticsearch-2.3.4.tar.gz\
-    | tar -xJC /opt \
-
+RUN yum update -y \
+    && curl https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.4/elasticsearch-2.3.4.tar.gz\
+    | tar -xJC /opt
+    
 #进入es目录
 WORKDIR /opt/elasticsearch-2.3.4/config
 
 #删除elasticsearch.yml
 RUN rm -rf elasticsearch.yml\
-    & wget https://github.com/caizhenzhen2010/elasticsearch_client/blob/master/elasticsearch.yml
-
-
+    && wget https://github.com/caizhenzhen2010/elasticsearch_client/blob/master/elasticsearch.yml
 
 #绑定端口
 EXPOSE 9200 9300
