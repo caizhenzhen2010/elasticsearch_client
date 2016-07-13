@@ -6,8 +6,8 @@ MAINTAINER sean "caizhenzhen2010@sina.com"
 #更新软件版本
 #安装wget
 #下载 elasticsearch并解压
-RUN yum update -y && yum install -y wget\
-    && wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.4/elasticsearch-2.3.4.tar.gz\
+RUN yum update -y && yum install -y wget
+RUN wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.4/elasticsearch-2.3.4.tar.gz\
     | tar -zxvC /opt/
     
 #进入es目录
